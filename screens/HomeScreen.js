@@ -54,7 +54,7 @@ export default class HomeScreen extends React.Component {
               selectedValue={this.state.PickerValue}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerValue: itemValue})}>
               <Picker.Item label="Киря лох" value="1" />
-              <Picker.Item label="Или все таки лох" value="2" />
+              <Picker.Item label="Или все такиs лох" value="2" />
           </Picker>
           </View>
           {/*<View style={styles.helpContainer}>*/}

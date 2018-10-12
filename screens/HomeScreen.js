@@ -11,7 +11,6 @@ import {
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
-import  main  from '../json/main';
 import { Container, Header, Title, Button, Icon, Left, Right, Body } from "native-base";
 
 
@@ -31,7 +30,7 @@ export default class HomeScreen extends React.Component {
                     </Left>
                 </Header>
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-                    <main />
+                   
                 </ScrollView>
             </View>
         );

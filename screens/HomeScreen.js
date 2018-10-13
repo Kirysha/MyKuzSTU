@@ -53,7 +53,7 @@ export default class HomeScreen extends React.Component {
           <Picker style={{textAlign: 'center'}}
               selectedValue={this.state.PickerValue}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerValue: itemValue})}>
-              <Picker.Item label="Киря лох" value="1" />
+              <Picker.Item label="Киря лох2" value="1" />
               <Picker.Item label="Или все такиs лох" value="2" />
           </Picker>
           </View>

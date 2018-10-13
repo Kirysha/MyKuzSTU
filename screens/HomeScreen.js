@@ -30,7 +30,7 @@ export default class HomeScreen extends React.Component {
                     </Left>
                 </Header>
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-                   
+
                 </ScrollView>
             </View>
         );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ActivityIndicator, Text, View } from 'react-native';
+import { FlatList, ActivityIndicator, Text, View, StyleSheet } from 'react-native';
 
 export default class FetchExample extends React.Component {
 
@@ -9,13 +9,13 @@ export default class FetchExample extends React.Component {
     }
 
     componentDidMount() {
-        return fetch('https://vkbotkuzstu.azurewebsites.net/api/groupSchedule/ÏÈá-162')
+        return fetch('https://vkbotkuzstu.azurewebsites.net/api/groupSchedule/4552')
             .then((response) => response.json())
             .then((responseJson) => {
-
+                console.log("all", responseJson)
                 this.setState({
                     isLoading: false,
-                    dataSource: responseJson.schedule,
+                    dataSource: responseJson.schedules,
                 }, function () {
 
                 });
@@ -25,6 +25,24 @@ export default class FetchExample extends React.Component {
                 console.error(error);
             });
     }
+
+    //componentDidMount() {
+    //    return fetch('https://vkbotkuzstu.azurewebsites.net/api/groupSchedule/ÏÈá-162')
+    //        .then((response) => response.json())
+    //        .then((responseJson) => {
+
+    //            this.setState({
+    //                isLoading: false,
+    //                dataSource: responseJson
+    //            }, function () {
+
+    //            });
+
+    //        })
+    //        .catch((error) => {
+    //            console.error(error);
+    //        });
+    //}
 
 
 
@@ -37,15 +55,29 @@ export default class FetchExample extends React.Component {
                 </View>
             )
         }
-
+        console.log("react", this.state.dataSource)
         return (
             <View style={{ flex: 1, paddingTop: 20 }}>
-                <FlatList
+                <FlatList style={styles.fla}
                     data={this.state.dataSource}
-                    renderItem={({ item }) => <Text>{item.education_group_name}, {item.subject}</Text>}
-                    keyExtractor={({ id }, index) => id}
+                    renderItem={({ item }) => <Text style={styles.item}>{item.subject}</Text>}
                 />
             </View>
         );
     }
+
 }
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            paddingTop: 22
+        },
+        item: {
+            padding: 10,
+            fontSize: 18,
+            height: 44,
+        },
+        fla: {
+            backgroundColor: '#fff'
+        }
+    })
